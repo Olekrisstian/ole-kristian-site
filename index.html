@@ -55,33 +55,29 @@
   <div class="background" id="background">
     <div class="gray-overlay">
       <div class="flex flex-col md:flex-row justify-between min-h-screen">
-        <!-- Innhold -->
         <div class="flex justify-start p-6">
           <div class="text-left">
             <div class="mt-4">
               <h1 class="text-3xl font-bold">Ole Kristian Einarsen</h1>
               <p class="text-3xl mt-4">Music Therapist, musician.</p>
-              <p class="text-3xl mt-4">Contact: <a href="mailto:ole.einarsen@gmail.com" class="underline">ole.einarsen@gmail.com</a></p>
             </div>
           </div>
         </div>
-
-        <!-- Navigasjon -->
         <div class="flex flex-col md:flex-col mobile-nav justify-start md:items-end p-6 space-y-4 md:space-y-4 mt-4">
           <a href="#about" class="text-3xl custom-button">ABOUT</a>
           <a href="#publications" class="text-3xl custom-button">PUBLICATIONS</a>
-          <button class="text-3xl custom-button">PROJECTS</button>
+          <a href="#contact" class="text-3xl custom-button">CONTACT</a>
         </div>
       </div>
 
-      <!-- ABOUT SEKSJON -->
+      <!-- ABOUT SECTION -->
       <div id="about" class="flex justify-center px-10 py-10 min-h-screen items-center">
         <div class="flex flex-col md:flex-row justify-center items-center bg-gray-500 bg-opacity-30 border border-gray-300 p-6 w-full max-w-6xl space-y-6 md:space-y-0 md:space-x-10">
           <div class="md:w-1/2 text-center md:text-left text-xl normal-case">
             <p>
               Ole Kristian Einarsen is a trained music therapist from the Grieg Academy currently working on his PhD project
               "Music, Health and Policy". In his research, he is investigating how child-focused and music therapy-based
-              health research on how to provide and seccure cultural participation for young people fleeing alone over international boarders.
+              health research on how to provide and secure cultural participation for young people fleeing alone over international borders.
             </p>
           </div>
           <div class="md:w-1/2 flex justify-center">
@@ -93,12 +89,11 @@
       <!-- SPACER -->
       <div class="spacer"></div>
 
-      <!-- PUBLICATIONS SEKSJON -->
+      <!-- PUBLICATIONS SECTION -->
       <div id="publications" class="flex justify-center px-10 py-10 min-h-screen items-center text-left">
         <div class="w-full max-w-6xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6">
           <h2 class="text-2xl mb-6">Scientific Articles</h2>
           <p class="normal-case mb-10"><a href="https://voices.no/index.php/voices/article/view/4071" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Engebretsen, Ingunn Marie Stadskleiv et al. (2024). Collaboration Between Social Workers and Music Therapists in a Child Welfare Context for Unaccompanied Refugee Children.</a></p>
-
           <h2 class="text-2xl mb-6">Scientific Presentations</h2>
           <div class="space-y-2 normal-case">
             <p><a href="https://app.cristin.no/results/show.jsf?id=2259935" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Løvlie, Audun Gabriel (2024). Participation of unaccompanied refugee minors in music and cultural life (interfaculty PhD project).</a></p>
@@ -110,16 +105,21 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <script>
-    const background = document.getElementById('background');
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      background.style.backgroundPosition = `${50 + (x - 50) / 20}% ${50 + (y - 50) / 20}%`;
-    });
-  </script>
-</body>
-</html>
+      <!-- SPACER -->
+      <div class="spacer"></div>
+
+      <!-- CONTACT SECTION -->
+      <div id="contact" class="flex justify-center px-10 py-10 min-h-screen items-center">
+        <div class="w-full max-w-2xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6 space-y-6 text-xl normal-case">
+          <h2 class="text-2xl mb-4">Contact</h2>
+          <p>Email: <a href="mailto:ole.einarsen@gmail.com" class="underline">ole.einarsen@gmail.com</a></p>
+          <p>Phone: +47 959 68 249</p>
+          <form action="https://formspree.io/f/mqkrbyzr" method="POST" class="space-y-4">
+            <input type="text" name="name" placeholder="Your name" required class="w-full p-2 bg-gray-700 text-white placeholder-white">
+            <input type="email" name="email" placeholder="Your email" required class="w-full p-2 bg-gray-700 text-white placeholder-white">
+            <textarea name="message" placeholder="Your message" rows="5" required class="w-full p-2 bg-gray-700 text-white placeholder-white"></textarea>
+            <button type="submit" class="bg-white text-black px-4 py-2">Send</button>
+          </form>
+        </div>
+      </div>

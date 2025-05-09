@@ -41,6 +41,11 @@
     .spacer {
       height: 2vh;
     }
+    .mobile-link {
+      color: rgb(211, 211, 211);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
     @media (max-width: 768px) {
       .mobile-nav {
         flex-direction: row;
@@ -100,10 +105,10 @@
           <p class="normal-case mb-10"><a href="https://voices.no/index.php/voices/article/view/4071" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Engebretsen, Ingunn Marie Stadskleiv et al. (2024). Collaboration Between Social Workers and Music Therapists in a Child Welfare Context for Unaccompanied Refugee Children.</a></p>
           <h2 class="text-2xl mb-6">Scientific Presentations</h2>
           <div class="space-y-2 normal-case">
-            <p><a href="https://app.cristin.no/results/show.jsf?id=2259935" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Løvlie, Audun Gabriel (2024). Participation of unaccompanied refugee minors in music and cultural life (interfaculty PhD project).</a></p>
-            <p><a href="https://app.cristin.no/results/show.jsf?id=2320320" class="underline">Einarsen, Ole Kristian (2024). How can we ensure sustainability through music activities for youth who have fled alone? - A presentation of the research project Music, Health and Rights.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2259935" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Løvlie, Audun Gabriel (2024). Participation of unaccompanied refugee minors in music and cultural life.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2320320" class="underline">Einarsen, Ole Kristian (2024). Sustainability through music activities for youth who have fled alone.</a></p>
             <p><a href="https://app.cristin.no/results/show.jsf?id=2320325" class="underline">Einarsen, Ole Kristian (2024). Music and mastering life?.</a></p>
-            <p><a href="https://app.cristin.no/results/show.jsf?id=2320338" class="underline">Einarsen, Ole Kristian (2023). Music Therapy in Social Work for Unaccompanied Refugee Minor: Four Case Examples.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2320338" class="underline">Einarsen, Ole Kristian (2023). Music Therapy in Social Work for Unaccompanied Refugee Minor.</a></p>
             <p><a href="https://app.cristin.no/results/show.jsf?id=2012612" class="underline">Krüger, Viggo; Einarsen, Ole Kristian (2022). Music as a preventive tool in work with children and youth.</a></p>
             <p><a href="https://app.cristin.no/results/show.jsf?id=1964639" class="underline">Krüger, Viggo; Einarsen, Ole Kristian (2021). Music therapy in work with unaccompanied refugee minors.</a></p>
           </div>
@@ -130,8 +135,7 @@
     </div>
   </div>
 
-  
-<!-- Mobile navigation -->
+  <!-- Mobile navigation -->
   <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around bg-transparent py-4 text-sm">
     <a href="#about" class="mobile-link">ABOUT</a>
     <a href="#publications" class="mobile-link">PUBLICATIONS</a>
@@ -149,6 +153,9 @@
     });
 
     const nav = document.querySelector('body > div.fixed');
+    const links = document.querySelectorAll('.mobile-link');
+    const sections = ['about', 'publications', 'contact'].map(id => document.getElementById(id));
+
     window.addEventListener('scroll', () => {
       const scrollRatio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
       const yellow = [255, 255, 200];
@@ -156,24 +163,22 @@
       const r = Math.floor(yellow[0] + (lightGray[0] - yellow[0]) * scrollRatio);
       const g = Math.floor(yellow[1] + (lightGray[1] - yellow[1]) * scrollRatio);
       const b = Math.floor(yellow[2] + (lightGray[2] - yellow[2]) * scrollRatio);
-      nav.style.color = `rgb(${r}, ${g}, ${b})`;
-    });
+      const currentColor = `rgb(${r}, ${g}, ${b})`;
 
-    // Mobile menu active section highlighting
-    const links = document.querySelectorAll('.mobile-link');
-    const sections = ['about', 'publications', 'contact'].map(id => document.getElementById(id));
+      nav.style.color = currentColor;
 
-    window.addEventListener('scroll', () => {
       const scrollY = window.scrollY + window.innerHeight / 2;
       sections.forEach((section, i) => {
         const link = links[i];
         const rect = section.getBoundingClientRect();
         const offsetTop = window.scrollY + rect.top;
         const offsetBottom = offsetTop + section.offsetHeight;
-        if (scrollY >= offsetTop && scrollY < offsetBottom) {
+        const isActive = scrollY >= offsetTop && scrollY < offsetBottom;
+
+        if (isActive) {
           link.style.color = 'rgb(255, 255, 200)';
         } else {
-          link.style.color = 'rgb(180, 180, 180)';
+          link.style.color = currentColor;
         }
       });
     });

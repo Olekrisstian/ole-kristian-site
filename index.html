@@ -52,14 +52,14 @@
   </style>
 </head>
 <body class="text-gray-100">
-  <div class="fixed top-0 right-0 z-50 flex flex-col md:flex-col mobile-nav justify-start md:items-end p-6 space-y-4 md:space-y-4 text-yellow-100">
+  <div class="hidden md:flex fixed top-0 right-0 z-50 flex-col justify-start items-end p-6 space-y-4" style="color: rgb(255, 255, 200);">
     <a href="#about" class="text-3xl custom-button">ABOUT</a>
     <a href="#publications" class="text-3xl custom-button">PUBLICATIONS</a>
     <a href="#contact" class="text-3xl custom-button">CONTACT</a>
   </div>
+
   <div class="background" id="background">
     <div class="gray-overlay">
-      
       <div class="flex flex-col md:flex-row justify-between min-h-screen">
         <div class="flex justify-start p-6">
           <div class="text-left">
@@ -69,7 +69,6 @@
             </div>
           </div>
         </div>
-        
       </div>
 
       <!-- ABOUT SECTION -->
@@ -128,7 +127,6 @@
           </form>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -141,20 +139,17 @@
         bg.style.backgroundPosition = `${50 + (x - 50) / 20}% ${50 + (y - 50) / 20}%`;
       });
     });
+
+    const nav = document.querySelector('body > div.fixed');
+    window.addEventListener('scroll', () => {
+      const scrollRatio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      const yellow = [255, 255, 200];
+      const lightGray = [211, 211, 211];
+      const r = Math.floor(yellow[0] + (lightGray[0] - yellow[0]) * scrollRatio);
+      const g = Math.floor(yellow[1] + (lightGray[1] - yellow[1]) * scrollRatio);
+      const b = Math.floor(yellow[2] + (lightGray[2] - yellow[2]) * scrollRatio);
+      nav.style.color = `rgb(${r}, ${g}, ${b})`;
+    });
   </script>
-<script>
-  const nav = document.querySelector('body > div.fixed');
-  window.addEventListener('scroll', () => {
-    const scrollRatio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    const grayLevel = Math.floor(255 - (scrollRatio * 120)); // from white to dark gray
-    const yellow = [255, 255, 200];
-    const lightGray = [211, 211, 211];
-    const r = Math.floor(yellow[0] + (lightGray[0] - yellow[0]) * scrollRatio);
-    const g = Math.floor(yellow[1] + (lightGray[1] - yellow[1]) * scrollRatio);
-    const b = Math.floor(yellow[2] + (lightGray[2] - yellow[2]) * scrollRatio);
-    nav.style.color = `rgb(${r}, ${g}, ${b})`;
-  });
-</script>
 </body>
 </html>
-

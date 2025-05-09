@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ole Kristian Einarsen</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      font-style: italic;
-      font-weight: bold;
+      font-family: "Playfair Display", serif;
       margin: 0;
       height: 100vh;
       overflow-x: hidden;
     }
-    .custom-button {
+    h1, h2.section-title, .custom-button, .mobile-link {
       font-family: Arial, sans-serif;
       font-style: italic;
       font-weight: bold;
       text-transform: uppercase;
     }
+    .custom-button {
+      font-size: 1.875rem;
+    }
+    .custom-button:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
     .background {
-      background-image: url('R1-04541-0007.JPG');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -38,21 +42,15 @@
       width: 100%;
       position: relative;
     }
-    .spacer {
-      height: 2vh;
-    }
+    .spacer { height: 2vh; }
     .mobile-link {
       color: rgb(211, 211, 211);
       text-decoration: none;
       transition: color 0.3s ease;
     }
-    @media (max-width: 768px) {
-      .mobile-nav {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-      }
+    .mobile-link.active {
+      color: white;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -63,15 +61,13 @@
     <a href="#contact" class="text-3xl custom-button">CONTACT</a>
   </div>
 
-  <div class="background" id="background">
+  <div class="background" id="background" style="background-image: url('R1-04541-0007.JPG');">
     <div class="gray-overlay">
       <div class="flex flex-col md:flex-row justify-between min-h-screen">
         <div class="flex justify-start p-6">
-          <div class="text-left">
-            <div class="mt-4">
-              <h1 class="text-3xl font-bold">Ole Kristian Einarsen</h1>
-              <p class="text-3xl mt-4">Music Therapist, musician.</p>
-            </div>
+          <div class="text-left mt-4">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">Ole Kristian Einarsen</h1>
+            <p class="text-2xl md:text-3xl mt-4 custom-button">Music Therapist, musician.</p>
           </div>
         </div>
       </div>
@@ -79,15 +75,11 @@
       <!-- ABOUT SECTION -->
       <div id="about" class="flex justify-center px-10 py-28 min-h-screen items-center">
         <div class="flex flex-col md:flex-row justify-center items-center bg-gray-500 bg-opacity-30 border border-gray-300 p-6 w-full max-w-6xl space-y-6 md:space-y-0 md:space-x-10">
-          <div class="md:w-1/2 text-center md:text-left text-xl normal-case">
-            <p>
-              Ole Kristian Einarsen is a trained music therapist from the Grieg Academy currently working on his PhD project
-              "Music, Health and Policy". In his research, he is investigating how child-focused and music therapy-based
-              health research on how to provide and secure cultural participation for young people fleeing alone over international borders.
-            </p>
+          <div class="md:w-1/2 text-center md:text-left text-2xl normal-case">
+            <p>Ole Kristian Einarsen is a trained music therapist from the Grieg Academy currently working on his PhD project "Music, Health and Policy". His research explores how child-centered, music therapy-based health research can support and ensure cultural participation for young people fleeing alone across international borders.</p>
           </div>
           <div class="md:w-1/2 flex justify-center">
-            <img src="Ole Kristian Einarsen.jpeg" alt="Ole Kristian Einarsen" class="shadow-xl max-h-[400px] border border-gray-300">
+            <img src="Ole Kristian Einarsen.jpeg" loading="lazy" alt="Portrait of Ole Kristian Einarsen smiling" class="shadow-xl max-h-[400px] border border-gray-300">
           </div>
         </div>
       </div>
@@ -100,10 +92,11 @@
 
       <!-- PUBLICATIONS SECTION -->
       <div id="publications" class="flex justify-center px-10 py-28 min-h-screen items-center text-left">
-        <div class="w-full max-w-6xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6">
-          <h2 class="text-2xl mb-6">Scientific Articles</h2>
+        <div class="w-full max-w-6xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6 text-xl">
+          <h2 class="text-2xl mb-6 section-title">Scientific Publications</h2>
           <p class="normal-case mb-10"><a href="https://voices.no/index.php/voices/article/view/4071" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Engebretsen, Ingunn Marie Stadskleiv et al. (2024). Collaboration Between Social Workers and Music Therapists in a Child Welfare Context for Unaccompanied Refugee Children.</a></p>
-          <h2 class="text-2xl mb-6">Scientific Presentations</h2>
+          
+          <h2 class="text-2xl mb-6 section-title">Scientific Presentations</h2>
           <div class="space-y-2 normal-case">
             <p><a href="https://app.cristin.no/results/show.jsf?id=2259935" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Løvlie, Audun Gabriel (2024). Participation of unaccompanied refugee minors in music and cultural life.</a></p>
             <p><a href="https://app.cristin.no/results/show.jsf?id=2320320" class="underline">Einarsen, Ole Kristian (2024). Sustainability through music activities for youth who have fled alone.</a></p>
@@ -115,13 +108,12 @@
         </div>
       </div>
 
-      <!-- SPACER -->
       <div class="spacer"></div>
 
       <!-- CONTACT SECTION -->
       <div id="contact" class="flex justify-center px-10 py-10 min-h-screen items-center">
         <div class="w-full max-w-2xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6 space-y-6 text-xl normal-case">
-          <h2 class="text-2xl mb-4">Contact</h2>
+          <h2 class="text-2xl mb-4 section-title">Contact</h2>
           <p>Email: <a href="mailto:ole.einarsen@gmail.com" class="underline">ole.einarsen@gmail.com</a></p>
           <p>Phone: +47 959 68 249</p>
           <form action="https://formspree.io/f/xwpoqlvk" method="POST" class="space-y-4">
@@ -136,10 +128,10 @@
   </div>
 
   <!-- Mobile navigation -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around bg-transparent py-4 text-sm">
-    <a href="#about" class="mobile-link">ABOUT</a>
-    <a href="#publications" class="mobile-link">PUBLICATIONS</a>
-    <a href="#contact" class="mobile-link">CONTACT</a>
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around bg-gray-800 bg-opacity-80 border-t border-gray-600 py-4 text-base">
+    <a href="#about" class="mobile-link" aria-label="Go to About section">ABOUT</a>
+    <a href="#publications" class="mobile-link" aria-label="Go to Publications section">PUBLICATIONS</a>
+    <a href="#contact" class="mobile-link" aria-label="Go to Contact section">CONTACT</a>
   </div>
 
   <script>
@@ -152,33 +144,19 @@
       });
     });
 
-    const nav = document.querySelector('body > div.fixed');
-    const links = document.querySelectorAll('.mobile-link');
-    const sections = ['about', 'publications', 'contact'].map(id => document.getElementById(id));
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const sectionElements = ['about', 'publications', 'contact'].map(id => document.getElementById(id));
 
     window.addEventListener('scroll', () => {
-      const scrollRatio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      const yellow = [255, 255, 200];
-      const lightGray = [211, 211, 211];
-      const r = Math.floor(yellow[0] + (lightGray[0] - yellow[0]) * scrollRatio);
-      const g = Math.floor(yellow[1] + (lightGray[1] - yellow[1]) * scrollRatio);
-      const b = Math.floor(yellow[2] + (lightGray[2] - yellow[2]) * scrollRatio);
-      const currentColor = `rgb(${r}, ${g}, ${b})`;
-
-      nav.style.color = currentColor;
-
-      const scrollY = window.scrollY + window.innerHeight / 2;
-      sections.forEach((section, i) => {
-        const link = links[i];
-        const rect = section.getBoundingClientRect();
-        const offsetTop = window.scrollY + rect.top;
-        const offsetBottom = offsetTop + section.offsetHeight;
-        const isActive = scrollY >= offsetTop && scrollY < offsetBottom;
-
-        if (isActive) {
-          link.style.color = 'rgb(255, 255, 200)';
+      const scrollY = window.scrollY + window.innerHeight / 3;
+      sectionElements.forEach((section, idx) => {
+        const link = mobileLinks[idx];
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollY >= top && scrollY < bottom) {
+          link.classList.add('active');
         } else {
-          link.style.color = currentColor;
+          link.classList.remove('active');
         }
       });
     });

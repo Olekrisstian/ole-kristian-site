@@ -52,7 +52,7 @@
   </style>
 </head>
 <body class="text-gray-100">
-  <div class="fixed top-0 right-0 z-50 flex flex-col md:flex-col mobile-nav justify-start md:items-end p-6 space-y-4 md:space-y-4 text-gray-400">
+  <div class="fixed top-0 right-0 z-50 flex flex-col md:flex-col mobile-nav justify-start md:items-end p-6 space-y-4 md:space-y-4 text-yellow-100">
     <a href="#about" class="text-3xl custom-button">ABOUT</a>
     <a href="#publications" class="text-3xl custom-button">PUBLICATIONS</a>
     <a href="#contact" class="text-3xl custom-button">CONTACT</a>
@@ -120,7 +120,7 @@
           <h2 class="text-2xl mb-4">Contact</h2>
           <p>Email: <a href="mailto:ole.einarsen@gmail.com" class="underline">ole.einarsen@gmail.com</a></p>
           <p>Phone: +47 959 68 249</p>
-          <form action="https://formspree.io/f/xwpoqlvk" method="POST">
+          <form action="https://formspree.io/f/xwpoqlvk" method="POST" class="space-y-4">
             <input type="text" name="name" placeholder="Your name" required class="w-full p-2 bg-gray-700 text-white placeholder-white">
             <input type="email" name="email" placeholder="Your email" required class="w-full p-2 bg-gray-700 text-white placeholder-white">
             <textarea name="message" placeholder="Your message" rows="5" required class="w-full p-2 bg-gray-700 text-white placeholder-white"></textarea>
@@ -147,8 +147,14 @@
   window.addEventListener('scroll', () => {
     const scrollRatio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
     const grayLevel = Math.floor(255 - (scrollRatio * 120)); // from white to dark gray
-    nav.style.color = `rgb(${grayLevel}, ${grayLevel}, ${grayLevel})`;
+    const yellow = [255, 255, 200];
+    const lightGray = [211, 211, 211];
+    const r = Math.floor(yellow[0] + (lightGray[0] - yellow[0]) * scrollRatio);
+    const g = Math.floor(yellow[1] + (lightGray[1] - yellow[1]) * scrollRatio);
+    const b = Math.floor(yellow[2] + (lightGray[2] - yellow[2]) * scrollRatio);
+    nav.style.color = `rgb(${r}, ${g}, ${b})`;
   });
 </script>
 </body>
 </html>
+

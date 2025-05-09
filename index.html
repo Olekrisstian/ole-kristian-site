@@ -39,7 +39,7 @@
       position: relative;
     }
     .spacer {
-      height: 4vh;
+      height: 2vh;
     }
     @media (max-width: 768px) {
       .mobile-nav {
@@ -52,8 +52,14 @@
   </style>
 </head>
 <body class="text-gray-100">
+  <div class="fixed top-0 right-0 z-50 flex flex-col md:flex-col mobile-nav justify-start md:items-end p-6 space-y-4 md:space-y-4 text-gray-400">
+    <a href="#about" class="text-3xl custom-button">ABOUT</a>
+    <a href="#publications" class="text-3xl custom-button">PUBLICATIONS</a>
+    <a href="#contact" class="text-3xl custom-button">CONTACT</a>
+  </div>
   <div class="background" id="background">
     <div class="gray-overlay">
+      
       <div class="flex flex-col md:flex-row justify-between min-h-screen">
         <div class="flex justify-start p-6">
           <div class="text-left">
@@ -63,15 +69,11 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col md:flex-col mobile-nav justify-start md:items-end p-6 space-y-4 md:space-y-4 mt-4">
-          <a href="#about" class="text-3xl custom-button">ABOUT</a>
-          <a href="#publications" class="text-3xl custom-button">PUBLICATIONS</a>
-          <a href="#contact" class="text-3xl custom-button">CONTACT</a>
-        </div>
+        
       </div>
 
       <!-- ABOUT SECTION -->
-      <div id="about" class="flex justify-center px-10 py-10 min-h-screen items-center">
+      <div id="about" class="flex justify-center px-10 py-28 min-h-screen items-center">
         <div class="flex flex-col md:flex-row justify-center items-center bg-gray-500 bg-opacity-30 border border-gray-300 p-6 w-full max-w-6xl space-y-6 md:space-y-0 md:space-x-10">
           <div class="md:w-1/2 text-center md:text-left text-xl normal-case">
             <p>
@@ -85,37 +87,34 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- SPACER -->
-      <div class="spacer" style="height: 2vh;"></div>
+  <!-- SECOND BACKGROUND START -->
+  <div class="background" style="background-image: url('R1-04541-0008.JPG');">
+    <div class="gray-overlay">
 
-      </div>
-</div>
-
-<!-- SECOND BACKGROUND START -->
-<div class="background" style="background-image: url('R1-04541-0008.JPG');">
-  <div class="gray-overlay">
-
-    <!-- PUBLICATIONS SECTION -->
-    <div id="publications" class="flex justify-center px-10 py-10 min-h-screen items-center text-left">
-      <div class="w-full max-w-6xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6">
-        <h2 class="text-2xl mb-6">Scientific Articles</h2>
-        <p class="normal-case mb-10"><a href="https://voices.no/index.php/voices/article/view/4071" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Engebretsen, Ingunn Marie Stadskleiv et al. (2024). Collaboration Between Social Workers and Music Therapists in a Child Welfare Context for Unaccompanied Refugee Children.</a></p>
-        <h2 class="text-2xl mb-6">Scientific Presentations</h2>
-        <div class="space-y-2 normal-case">
-          <p><a href="https://app.cristin.no/results/show.jsf?id=2259935" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Løvlie, Audun Gabriel (2024). Participation of unaccompanied refugee minors in music and cultural life (interfaculty PhD project).</a></p>
-          <p><a href="https://app.cristin.no/results/show.jsf?id=2320320" class="underline">Einarsen, Ole Kristian (2024). How can we ensure sustainability through music activities for youth who have fled alone? - A presentation of the research project Music, Health and Rights.</a></p>
-          <p><a href="https://app.cristin.no/results/show.jsf?id=2320325" class="underline">Einarsen, Ole Kristian (2024). Music and mastering life?.</a></p>
-          <p><a href="https://app.cristin.no/results/show.jsf?id=2320338" class="underline">Einarsen, Ole Kristian (2023). Music Therapy in Social Work for Unaccompanied Refugee Minor: Four Case Examples.</a></p>
-          <p><a href="https://app.cristin.no/results/show.jsf?id=2012612" class="underline">Krüger, Viggo; Einarsen, Ole Kristian (2022). Music as a preventive tool in work with children and youth.</a></p>
-          <p><a href="https://app.cristin.no/results/show.jsf?id=1964639" class="underline">Krüger, Viggo; Einarsen, Ole Kristian (2021). Music therapy in work with unaccompanied refugee minors.</a></p>
+      <!-- PUBLICATIONS SECTION -->
+      <div id="publications" class="flex justify-center px-10 py-28 min-h-screen items-center text-left">
+        <div class="w-full max-w-6xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6">
+          <h2 class="text-2xl mb-6">Scientific Articles</h2>
+          <p class="normal-case mb-10"><a href="https://voices.no/index.php/voices/article/view/4071" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Engebretsen, Ingunn Marie Stadskleiv et al. (2024). Collaboration Between Social Workers and Music Therapists in a Child Welfare Context for Unaccompanied Refugee Children.</a></p>
+          <h2 class="text-2xl mb-6">Scientific Presentations</h2>
+          <div class="space-y-2 normal-case">
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2259935" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Løvlie, Audun Gabriel (2024). Participation of unaccompanied refugee minors in music and cultural life (interfaculty PhD project).</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2320320" class="underline">Einarsen, Ole Kristian (2024). How can we ensure sustainability through music activities for youth who have fled alone? - A presentation of the research project Music, Health and Rights.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2320325" class="underline">Einarsen, Ole Kristian (2024). Music and mastering life?.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2320338" class="underline">Einarsen, Ole Kristian (2023). Music Therapy in Social Work for Unaccompanied Refugee Minor: Four Case Examples.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2012612" class="underline">Krüger, Viggo; Einarsen, Ole Kristian (2022). Music as a preventive tool in work with children and youth.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=1964639" class="underline">Krüger, Viggo; Einarsen, Ole Kristian (2021). Music therapy in work with unaccompanied refugee minors.</a></p>
+          </div>
         </div>
       </div>
-    </div>
-  <!-- SPACER -->
-    <div class="spacer"></div>
 
-    <!-- CONTACT SECTION -->
+      <!-- SPACER -->
+      <div class="spacer"></div>
+
+      <!-- CONTACT SECTION -->
       <div id="contact" class="flex justify-center px-10 py-10 min-h-screen items-center">
         <div class="w-full max-w-2xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6 space-y-6 text-xl normal-case">
           <h2 class="text-2xl mb-4">Contact</h2>
@@ -129,3 +128,27 @@
           </form>
         </div>
       </div>
+
+    </div>
+  </div>
+
+  <script>
+    const backgrounds = document.querySelectorAll('.background');
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      backgrounds.forEach(bg => {
+        bg.style.backgroundPosition = `${50 + (x - 50) / 20}% ${50 + (y - 50) / 20}%`;
+      });
+    });
+  </script>
+<script>
+  const nav = document.querySelector('body > div.fixed');
+  window.addEventListener('scroll', () => {
+    const scrollRatio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    const grayLevel = Math.floor(255 - (scrollRatio * 120)); // from white to dark gray
+    nav.style.color = `rgb(${grayLevel}, ${grayLevel}, ${grayLevel})`;
+  });
+</script>
+</body>
+</html>

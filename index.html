@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ole Kristian Einarsen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      font-style: italic;
+      font-weight: bold;
+      margin: 0;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+    .custom-button {
+      font-family: Arial, sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .background {
+      background-image: url('R1-04541-0007.JPG');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: perspective(1000px);
+      transition: background-position 0.1s ease;
+    }
+    .gray-overlay {
+      background-color: rgba(128, 128, 128, 0.6);
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+    .spacer {
+      height: 4vh;
+    }
+    @media (max-width: 768px) {
+      .mobile-nav {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="text-gray-100">
+  <div class="background" id="background">
+    <div class="gray-overlay">
+      <div class="flex flex-col md:flex-row justify-between min-h-screen">
+        <!-- Innhold -->
+        <div class="flex justify-start p-6">
+          <div class="text-left">
+            <div class="mt-4">
+              <h1 class="text-3xl font-bold">Ole Kristian Einarsen</h1>
+              <p class="text-3xl mt-4">Music Therapist, musician.</p>
+              <p class="text-3xl mt-4">Contact: <a href="mailto:ole.einarsen@gmail.com" class="underline">ole.einarsen@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigasjon -->
+        <div class="flex flex-col md:flex-col mobile-nav justify-start md:items-end p-6 space-y-4 md:space-y-4 mt-4">
+          <a href="#about" class="text-3xl custom-button">ABOUT</a>
+          <a href="#publications" class="text-3xl custom-button">PUBLICATIONS</a>
+          <button class="text-3xl custom-button">PROJECTS</button>
+        </div>
+      </div>
+
+      <!-- ABOUT SEKSJON -->
+      <div id="about" class="flex justify-center px-10 py-10 min-h-screen items-center">
+        <div class="flex flex-col md:flex-row justify-center items-center bg-gray-500 bg-opacity-30 border border-gray-300 p-6 w-full max-w-6xl space-y-6 md:space-y-0 md:space-x-10">
+          <div class="md:w-1/2 text-center md:text-left text-xl normal-case">
+            <p>
+              Ole Kristian Einarsen is a trained music therapist from the Grieg Academy currently working on his PhD project
+              "Music, Health and Policy". In his research, he is investigating how child-focused and music therapy-based
+              health research on how to provide and seccure cultural participation for young people fleeing alone over international boarders.
+            </p>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <img src="Ole Kristian Einarsen.jpeg" alt="Ole Kristian Einarsen" class="shadow-xl max-h-[400px] border border-gray-300">
+          </div>
+        </div>
+      </div>
+
+      <!-- SPACER -->
+      <div class="spacer"></div>
+
+      <!-- PUBLICATIONS SEKSJON -->
+      <div id="publications" class="flex justify-center px-10 py-10 min-h-screen items-center text-left">
+        <div class="w-full max-w-6xl bg-gray-500 bg-opacity-30 border border-gray-300 p-6">
+          <h2 class="text-2xl mb-6">Scientific Articles</h2>
+          <p class="normal-case mb-10"><a href="https://voices.no/index.php/voices/article/view/4071" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Engebretsen, Ingunn Marie Stadskleiv et al. (2024). Collaboration Between Social Workers and Music Therapists in a Child Welfare Context for Unaccompanied Refugee Children.</a></p>
+
+          <h2 class="text-2xl mb-6">Scientific Presentations</h2>
+          <div class="space-y-2 normal-case">
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2259935" class="underline">Einarsen, Ole Kristian; Krüger, Viggo; Løvlie, Audun Gabriel (2024). Participation of unaccompanied refugee minors in music and cultural life (interfaculty PhD project).</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2320320" class="underline">Einarsen, Ole Kristian (2024). How can we ensure sustainability through music activities for youth who have fled alone? - A presentation of the research project Music, Health and Rights.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2320325" class="underline">Einarsen, Ole Kristian (2024). Music and mastering life?.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2320338" class="underline">Einarsen, Ole Kristian (2023). Music Therapy in Social Work for Unaccompanied Refugee Minor: Four Case Examples.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=2012612" class="underline">Krüger, Viggo; Einarsen, Ole Kristian (2022). Music as a preventive tool in work with children and youth.</a></p>
+            <p><a href="https://app.cristin.no/results/show.jsf?id=1964639" class="underline">Krüger, Viggo; Einarsen, Ole Kristian (2021). Music therapy in work with unaccompanied refugee minors.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const background = document.getElementById('background');
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      background.style.backgroundPosition = `${50 + (x - 50) / 20}% ${50 + (y - 50) / 20}%`;
+    });
+  </script>
+</body>
+</html>

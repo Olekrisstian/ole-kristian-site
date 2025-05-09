@@ -130,6 +130,14 @@
     </div>
   </div>
 
+  
+<!-- Mobile navigation -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around bg-transparent py-4 text-sm">
+    <a href="#about" class="mobile-link">ABOUT</a>
+    <a href="#publications" class="mobile-link">PUBLICATIONS</a>
+    <a href="#contact" class="mobile-link">CONTACT</a>
+  </div>
+
   <script>
     const backgrounds = document.querySelectorAll('.background');
     document.addEventListener('mousemove', (e) => {
@@ -149,6 +157,25 @@
       const g = Math.floor(yellow[1] + (lightGray[1] - yellow[1]) * scrollRatio);
       const b = Math.floor(yellow[2] + (lightGray[2] - yellow[2]) * scrollRatio);
       nav.style.color = `rgb(${r}, ${g}, ${b})`;
+    });
+
+    // Mobile menu active section highlighting
+    const links = document.querySelectorAll('.mobile-link');
+    const sections = ['about', 'publications', 'contact'].map(id => document.getElementById(id));
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY + window.innerHeight / 2;
+      sections.forEach((section, i) => {
+        const link = links[i];
+        const rect = section.getBoundingClientRect();
+        const offsetTop = window.scrollY + rect.top;
+        const offsetBottom = offsetTop + section.offsetHeight;
+        if (scrollY >= offsetTop && scrollY < offsetBottom) {
+          link.style.color = 'rgb(255, 255, 200)';
+        } else {
+          link.style.color = 'rgb(180, 180, 180)';
+        }
+      });
     });
   </script>
 </body>

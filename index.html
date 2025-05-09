@@ -127,39 +127,54 @@
     </div>
   </div>
 
-  <!-- Mobile navigation -->
-  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around bg-gray-800 bg-opacity-80 border-t border-gray-600 py-4 text-base">
-    <a href="#about" class="mobile-link" aria-label="Go to About section">ABOUT</a>
-    <a href="#publications" class="mobile-link" aria-label="Go to Publications section">PUBLICATIONS</a>
-    <a href="#contact" class="mobile-link" aria-label="Go to Contact section">CONTACT</a>
-  </div>
+<!-- Mobile navigation -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around bg-transparent py-4 text-base">
+  <a href="#about" class="mobile-link text-[rgb(255,255,200)]" aria-label="Go to About section">ABOUT</a>
+  <a href="#publications" class="mobile-link text-[rgb(255,255,200)]" aria-label="Go to Publications section">PUBLICATIONS</a>
+  <a href="#contact" class="mobile-link text-[rgb(255,255,200)]" aria-label="Go to Contact section">CONTACT</a>
+</div>
 
-  <script>
-    const backgrounds = document.querySelectorAll('.background');
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      backgrounds.forEach(bg => {
-        bg.style.backgroundPosition = `${50 + (x - 50) / 20}% ${50 + (y - 50) / 20}%`;
-      });
+<style>
+  .mobile-link {
+    color: rgb(255, 255, 200);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .mobile-link.active {
+    font-weight: bold;
+    background: linear-gradient(to top, rgb(255, 255, 200), rgba(255, 255, 200, 0.1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
+
+<script>
+  const backgrounds = document.querySelectorAll('.background');
+  document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    backgrounds.forEach(bg => {
+      bg.style.backgroundPosition = `${50 + (x - 50) / 20}% ${50 + (y - 50) / 20}%`;
     });
+  });
 
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    const sectionElements = ['about', 'publications', 'contact'].map(id => document.getElementById(id));
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const sectionElements = ['about', 'publications', 'contact'].map(id => document.getElementById(id));
 
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY + window.innerHeight / 3;
-      sectionElements.forEach((section, idx) => {
-        const link = mobileLinks[idx];
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        if (scrollY >= top && scrollY < bottom) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + window.innerHeight / 3;
+    sectionElements.forEach((section, idx) => {
+      const link = mobileLinks[idx];
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      if (scrollY >= top && scrollY < bottom) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
+
